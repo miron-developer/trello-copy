@@ -13,7 +13,7 @@
   box-shadow: inset 0px 0px 0px 1px #00000000, 0px 1px 1px #03040480,
     0px 0px 1px #03040480;
   cursor: pointer;
-  z-index: 10;
+  z-index: 0;
 
   p {
     margin: 0;
@@ -34,6 +34,7 @@
 
 .task-fixed {
   position: fixed;
+  z-index: 10;
 }
 
 .task-edit-form {
