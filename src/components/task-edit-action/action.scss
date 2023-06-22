@@ -1,0 +1,19 @@
+.task-edit-action {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 4px 8px;
+  padding: 6px 12px 6px 10px;
+  color: #c7d1db;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #0009;
+  border-radius: 3px;
+  transition: transform 85ms ease-in;
+
+  &:hover {
+    color: #fff;
+    background: #000c;
+    transform: translateX(5px);
+  }
+}

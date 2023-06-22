@@ -1,0 +1,115 @@
+.board-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 272px;
+  min-width: 272px;
+  height: 100%;
+  max-height: calc(100vh - 90px);
+  background: #101204;
+  border-radius: 12px;
+  box-shadow: inset 0px 0px 0px 1px #00000000, 0px 1px 1px #03040480,
+    0px 0px 1px #03040480;
+  overflow: hidden;
+}
+
+.board-section-header {
+  padding: 14px 8px;
+  flex: 0 0 auto;
+  min-height: 20px;
+  max-height: 48px;
+  z-index: 10;
+  background: #101204;
+
+  &-title {
+    padding: 0px 8px 0px 12px;
+    height: 28px;
+    width: 224px;
+    color: #b6c2cf;
+    font-size: 14px;
+    font-weight: 600;
+    background: #0000;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
+}
+
+.board-section-tasks {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 0 4px;
+  margin-bottom: 7px;
+  padding: 1px 4px 0;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.board-section-add-button {
+  display: flex;
+  align-items: center;
+  column-gap: 6px;
+  margin: 8px;
+  padding: 4px 8px 4px 6px;
+  color: #9fadbc;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #a6c5e229;
+    color: #9fadbc;
+  }
+}
+
+.board-section-add-form {
+  margin: 8px;
+}
+
+.board-section-add-form-textarea {
+  margin-bottom: 10px;
+}
+
+.board-section-add-form-btns {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+
+  button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  // add
+  & button:first-child {
+    min-width: 152px;
+    padding: 6px 12px;
+    color: #1d2125;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    border-radius: 3px;
+    background: #579dff;
+
+    &:hover {
+      background-color: #85b8ff;
+    }
+  }
+
+  // close
+  & button:last-child {
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+    line-height: 32px;
+    color: #8c9bab;
+
+    &:hover {
+      color: #9fadbc;
+    }
+  }
+}

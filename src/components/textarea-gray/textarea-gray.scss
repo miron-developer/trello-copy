@@ -1,0 +1,29 @@
+.textarea-gray {
+  background: #22272b;
+  border-radius: 3px;
+
+  textarea.form-control {
+    padding: 8px 8px 4px 12px;
+    max-height: 162px;
+    min-height: 76px;
+    line-height: 20px;
+    color: #b6c2cf;
+    font-size: 14px;
+    font-weight: 400;
+
+    border: none;
+    outline: none;
+    background: transparent;
+    resize: none;
+
+    &:focus {
+      border: none;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    &::placeholder {
+      color: #b6c2cf;
+    }
+  }
+}

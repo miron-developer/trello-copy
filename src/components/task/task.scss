@@ -1,0 +1,57 @@
+.task {
+  position: relative;
+  max-width: 300px;
+  min-height: 20px;
+  padding: 4px 8px 4px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-shrink: 0;
+  color: #b6c2cf;
+  background-color: #22272b;
+  border-radius: 8px;
+  box-shadow: inset 0px 0px 0px 1px #00000000, 0px 1px 1px #03040480,
+    0px 0px 1px #03040480;
+  cursor: pointer;
+  z-index: 10;
+
+  p {
+    margin: 0;
+    z-index: 0;
+  }
+
+  span {
+    opacity: 0;
+    transition: 0.3s;
+    z-index: 0;
+  }
+
+  &:hover span {
+    opacity: 1;
+    transition: 0.3s;
+  }
+}
+
+.task-fixed {
+  position: fixed;
+}
+
+.task-edit-form {
+  z-index: 30;
+}
+
+.task-edit-filter {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #0009;
+  z-index: 20;
+}
+
+.task-edit-panel {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 0;
+}
