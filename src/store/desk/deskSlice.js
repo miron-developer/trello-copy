@@ -34,15 +34,12 @@ export const deskSlice = createSlice({
 
       // update type even if newType = oldType
       !isNewColumn && (state.tasks[dstIndex].type = newType);
-      const dstId = state.tasks[dstIndex].id;
 
       // remove src
       state.tasks.splice(srcIndex, 1);
 
-      const newDstIndex = state.tasks.findIndex((t) => t.id === dstId);
-
       // insert in min position max position task
-      state.tasks.splice(newDstIndex, 0, srcIndexTask);
+      state.tasks.splice(dstIndex, 0, srcIndexTask);
     },
   },
 });
