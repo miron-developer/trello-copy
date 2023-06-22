@@ -45,9 +45,6 @@ export default function Desk() {
       endIndex = tasks.findIndex((t) => t.id === endIndexId);
     }
 
-    console.log(dstIndex);
-    console.log(tasks[startIndex].description, tasks[endIndex].description);
-
     // reorder
     reorder(endIndex, startIndex, isNewColumn, dstDroppableId);
   };
