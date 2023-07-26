@@ -1,9 +1,10 @@
 import "./action.scss";
 
-export default function TaskEditAction({ text, iconClassName, onClick }) {
+export default function TaskEditAction({ text, Icon, onClick }) {
   return (
     <div onClick={onClick} className="task-edit-action">
-      <i className={iconClassName}></i>
+      {Icon}
+
       <span>{text}</span>
     </div>
   );

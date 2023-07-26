@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 import { convertOneRef2InnerRef } from "@/lib/useForm";
 import useDesk from "@/lib/useDesk";
@@ -53,15 +55,21 @@ export default function Task({ id, type, description }) {
             <div className="board-section-add-form-btns">
               <button onClick={updateTask}>Save</button>
               <button onClick={toggle}>
-                <i className="fa-sharp fa-solid fa-xmark"></i>
+                <FontAwesomeIcon
+                  icon={icon({ name: "xmark", style: "solid" })}
+                />
               </button>
             </div>
 
             <div className="task-edit-panel">
               <TaskEditAction
-                onClick={removeTask}
-                iconClassName="fa-solid fa-trash"
                 text="Delete task"
+                onClick={removeTask}
+                Icon={
+                  <FontAwesomeIcon
+                    icon={icon({ name: "trash", style: "solid" })}
+                  />
+                }
               />
             </div>
           </div>
@@ -73,7 +81,7 @@ export default function Task({ id, type, description }) {
           <p>{description}</p>
 
           <span onClick={toggle}>
-            <i className="fa-solid fa-pen"></i>
+            <FontAwesomeIcon icon={icon({ name: "pen", style: "solid" })} />
           </span>
         </>
       )}

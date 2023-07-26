@@ -63,6 +63,9 @@ export default function Desk() {
     // move only to further
     if (dstSectionIndex - srcSectionIndex < 0) return;
 
+    // move only 1-by-1
+    if (dstSectionIndex - srcSectionIndex > 1) return;
+
     reorderTasks(
       result.draggableId,
       result.destination.droppableId,

@@ -1,18 +1,22 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+
 .task-edit-action {
-  display: flex;
-  align-items: center;
+  @include display-flex();
+  @include aligns(center);
+
   gap: 5px;
   margin: 0 0 4px 8px;
   padding: 6px 12px 6px 10px;
-  color: #c7d1db;
+  color: $textColor;
   white-space: nowrap;
   cursor: pointer;
-  background: #0009;
+  background: $backgroundFilter;
   border-radius: 3px;
   transition: transform 85ms ease-in;
 
   &:hover {
-    color: #fff;
+    color: white;
     background: #000c;
     transform: translateX(5px);
   }

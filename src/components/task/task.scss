@@ -1,19 +1,24 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+@import "@/styles/functions";
+
 .task {
   position: relative;
-  max-width: 300px;
-  min-height: 20px;
+  max-width: px2Rem(300px);
+  min-height: px2Rem(20px);
   padding: 4px 8px 4px 6px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-shrink: 0;
-  color: #b6c2cf;
-  background-color: #22272b;
+
+  @include display-flex();
+  @include aligns(flex-start, space-between);
+
+  color: $textColor;
+  background-color: $backgroundTaskColor;
   border-radius: 8px;
   box-shadow: inset 0px 0px 0px 1px #00000000, 0px 1px 1px #03040480,
     0px 0px 1px #03040480;
   cursor: pointer;
   z-index: 0;
+  overflow-wrap: anywhere;
 
   p {
     margin: 0;
@@ -43,16 +48,15 @@
 
 .task-edit-filter {
   position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: #0009;
+
+  @include reset-position();
+
+  background: $backgroundFilter;
   z-index: 20;
 }
 
 .task-edit-panel {
   position: absolute;
-  left: calc(100% + 10px);
-  top: 0;
+
+  @include set-position(0, unset, unset, calc(100% + 10px));
 }

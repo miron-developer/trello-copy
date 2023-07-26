@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Draggable, Droppable } from "react-beautiful-dnd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { icon } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { v4 as uuidv4 } from "uuid";
 
 import { convertOneRef2InnerRef } from "@/lib/useForm";
-import useDesk from "@/lib/useDesk";
+import useDesk, { TYPE_BACKLOG } from "@/lib/useDesk";
 import Task from "@/components/task/task";
 import TextareaGray from "@/components/textarea-gray/textarea-gray";
 
@@ -80,16 +82,17 @@ export default function Section({ type, name }) {
           <div className="board-section-add-form-btns">
             <button onClick={createTask}>Add Card</button>
             <button onClick={toggle}>
-              <i className="fa-sharp fa-solid fa-xmark"></i>
+              <FontAwesomeIcon icon={icon({ name: "xmark", style: "solid" })} />
             </button>
           </div>
         </div>
-      ) : (
+      ) : type === TYPE_BACKLOG ? (
         <button onClick={toggle} className="board-section-add-button">
-          <i className="fa-solid fa-plus"></i>
+          <FontAwesomeIcon icon={icon({ name: "plus", style: "solid" })} />
+
           <span>Add task</span>
         </button>
-      )}
+      ) : null}
     </div>
   );
 }

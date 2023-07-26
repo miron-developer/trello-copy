@@ -1,9 +1,9 @@
+@import "@/styles/mixins";
+
 .app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  height: 100%;
-  max-height: 100vh;
+  @include display-flex(column);
+  @include heights(100%, 100vh, 100vh);
+
   overflow: hidden;
   background-image: url(https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1281x1920/fe5746c2cb1fbcd832e5c163b2ec65db/photo-1685208996717-ae23ee48f45e.jpg);
   background-size: cover;
