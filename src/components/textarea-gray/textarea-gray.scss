@@ -1,29 +1,28 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+@import "@/styles/functions";
+
 .textarea-gray {
-  background: #22272b;
+  background: $backgroundTaskColor;
   border-radius: 3px;
 
   textarea.form-control {
+    @include heights(unset, px2Rem(76px), px2Rem(162px));
+
     padding: 8px 8px 4px 12px;
-    max-height: 162px;
-    min-height: 76px;
-    line-height: 20px;
-    color: #b6c2cf;
-    font-size: 14px;
+    color: $textColor;
+    line-height: px2Rem(20px);
+    font-size: px2Rem(14px);
     font-weight: 400;
 
-    border: none;
-    outline: none;
-    background: transparent;
-    resize: none;
+    @include reset-textarea();
 
     &:focus {
-      border: none;
-      background: transparent;
       box-shadow: none;
     }
 
     &::placeholder {
-      color: #b6c2cf;
+      color: $textColor;
     }
   }
 }

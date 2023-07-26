@@ -1,11 +1,13 @@
+@import "@/styles/variables";
+@import "@/styles/mixins";
+@import "@/styles/functions";
+
 .board-section {
-  display: flex;
-  flex-direction: column;
-  max-width: 272px;
-  min-width: 272px;
-  height: 100%;
-  max-height: calc(100vh - 90px);
-  background: #101204;
+  @include display-flex(column);
+  @include widths(unset, px2Rem(272px), px2Rem(272px));
+  @include heights(100%, unset, calc(100vh - px2Rem(90px)));
+
+  background: $backgroundSectionColor;
   border-radius: 12px;
   box-shadow: inset 0px 0px 0px 1px #00000000, 0px 1px 1px #03040480,
     0px 0px 1px #03040480;
@@ -15,18 +17,18 @@
 .board-section-header {
   padding: 14px 8px;
   flex: 0 0 auto;
-  min-height: 20px;
-  max-height: 48px;
-  background: #101204;
+
+  @include heights(unset, px2Rem(20px), px2Rem(48px));
+
+  background: $backgroundSectionColor;
 
   &-title {
     padding: 0px 8px 0px 12px;
-    height: 28px;
-    width: 224px;
-    color: #b6c2cf;
-    font-size: 14px;
+    height: px2Rem(28px);
+    width: px2Rem(224px);
+    color: $textColor;
+    font-size: px2Rem(14px);
     font-weight: 600;
-    background: #0000;
     overflow: hidden;
     overflow-wrap: break-word;
   }
@@ -34,8 +36,9 @@
 
 .board-section-tasks {
   flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
+
+  @include display-flex(column);
+
   gap: 7px;
   margin: 0 4px;
   margin-bottom: 7px;
@@ -46,20 +49,21 @@
 }
 
 .board-section-add-button {
-  display: flex;
-  align-items: center;
-  column-gap: 6px;
+  @include display-flex();
+  @include aligns(center);
+  @include gaps(6px);
+
   margin: 8px;
   padding: 4px 8px 4px 6px;
-  color: #9fadbc;
+  color: $textColor;
   border: none;
   border-radius: 8px;
   background: transparent;
   cursor: pointer;
 
   &:hover {
-    background-color: #a6c5e229;
-    color: #9fadbc;
+    background-color: $btnTransparentHoverColor;
+    color: $textColor;
   }
 }
 
@@ -72,38 +76,38 @@
 }
 
 .board-section-add-form-btns {
-  display: flex;
-  align-items: center;
-  column-gap: 4px;
+  @include display-flex();
+  @include aligns(center);
+  @include gaps(4px);
 
   button {
-    background: transparent;
-    border: none;
+    @include reset-button();
+
     cursor: pointer;
   }
 
   // add
   & button:first-child {
-    min-width: 152px;
+    min-width: px2Rem(152px);
     padding: 6px 12px;
-    color: #1d2125;
-    font-size: 14px;
+    color: $textDarkColor;
+    font-size: px2Rem(14px);
     font-weight: 400;
-    line-height: 20px;
+    line-height: px2Rem(20px);
     border-radius: 3px;
-    background: #579dff;
+    background: $btnColor;
 
     &:hover {
-      background-color: #85b8ff;
+      background-color: $btnHoverColor;
     }
   }
 
   // close
   & button:last-child {
-    width: 32px;
-    height: 32px;
-    font-size: 24px;
-    line-height: 32px;
+    @include square(px2Rem(32px));
+
+    font-size: px2Rem(24px);
+    line-height: px2Rem(32px);
     color: #8c9bab;
 
     &:hover {

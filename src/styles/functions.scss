@@ -1,0 +1,5 @@
+@import "@/styles/variables";
+
+@function px2Rem($px) {
+  @return calc($px / $rem) + rem;
+}
